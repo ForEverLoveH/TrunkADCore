@@ -1,0 +1,22 @@
+State=0 未测试
+State=1 已测试
+state=2 中退
+state=3 缺考
+state=4 犯规
+成绩是-1
+
+Score=0 无成绩
+Score=-1 犯规
+state=-2 中退
+state=-3 缺考
+
+
+
+
+
+
+
+
+
+
+

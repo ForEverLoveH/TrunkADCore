@@ -1,0 +1,347 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\OpenCvSharp4.runtime.win.4.6.0.20220608\build\net48\OpenCvSharp4.runtime.win.props" Condition="Exists('..\packages\OpenCvSharp4.runtime.win.4.6.0.20220608\build\net48\OpenCvSharp4.runtime.win.props')" />
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AAC0EB19-3BC1-4793-A7C6-483B8B71814A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>TrunkADCore</RootNamespace>
+    <AssemblyName>TrunkADCore</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.2.2.5\lib\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Controls, Version=2.2.5.0, Culture=neutral, PublicKeyToken=a8ac264d1dc6b9d9, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Controls.2.2.5\lib\AForge.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Imaging, Version=2.2.5.0, Culture=neutral, PublicKeyToken=ba8ddea9676ca48b, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Imaging.2.2.5\lib\AForge.Imaging.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Math, Version=2.2.5.0, Culture=neutral, PublicKeyToken=abba2e25397ee8c9, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Math.2.2.5\lib\AForge.Math.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.2.2.5\lib\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.DirectShow.2.2.5\lib\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="HZH_Controls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HZH_Controls.1.0.14\lib\net40\HZH_Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.SpeechLib">
+      <HintPath>..\..\TrunkPressingCore\TrunkPressingCore\bin\Debug\Dlls\Interop.SpeechLib.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.15\lib\net45\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="MiniExcel, Version=1.29.0.0, Culture=neutral, PublicKeyToken=e7310002a53eac39, processorArchitecture=MSIL">
+      <HintPath>..\packages\MiniExcel.1.29.0\lib\net45\MiniExcel.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenCvSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6adad1e807fea099, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenCvSharp4.4.6.0.20220608\lib\net48\OpenCvSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenCvSharp.Extensions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6adad1e807fea099, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenCvSharp4.Extensions.4.6.0.20220608\lib\net48\OpenCvSharp.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Serilog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.2.12.0\lib\net47\Serilog.dll</HintPath>
+    </Reference>
+    <Reference Include="SunnyUI, Version=3.2.9.0, Culture=neutral, PublicKeyToken=27d7d2e821d97aeb, processorArchitecture=MSIL">
+      <HintPath>..\packages\SunnyUI.3.2.9\lib\net472\SunnyUI.dll</HintPath>
+    </Reference>
+    <Reference Include="SunnyUI.Common, Version=3.2.9.0, Culture=neutral, PublicKeyToken=5a271fb7ba597231, processorArchitecture=MSIL">
+      <HintPath>..\packages\SunnyUI.Common.3.2.9\lib\net472\SunnyUI.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.116.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing.Common, Version=4.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Drawing.Common.5.0.3\lib\net461\System.Drawing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ADCoreSystem\ADCoreSys\CreateProjectWindowSys\CreateProjectWindowSys.cs" />
+    <Compile Include="ADCoreSystem\ADCoreSys\EquipmentCodeFormSys\EquipmentCodeFormSys.cs" />
+    <Compile Include="ADCoreSystem\ADCoreSys\ExportGradeIntoSys\ExportGradeIntoSys.cs" />
+    <Compile Include="ADCoreSystem\ADCoreSys\FindImage\FindImageSys.cs" />
+    <Compile Include="ADCoreSystem\ADCoreSys\FrmCameraPropertySys\CameraSettingBack.cs" />
+    <Compile Include="ADCoreSystem\ADCoreSys\FrmCameraPropertySys\FrmCameraPropertySys.cs" />
+    <Compile Include="ADCoreSystem\ADCoreSys\ImageHelper\FuseBitmap.cs" />
+    <Compile Include="ADCoreSystem\ADCoreSys\ImageHelper\ImageHelper.cs" />
+    <Compile Include="ADCoreSystem\ADCoreSys\MemoryTool.cs" />
+    <Compile Include="ADCoreSystem\ADCoreSys\Model\FormItemModel.cs" />
+    <Compile Include="ADCoreSystem\ADCoreSys\Model\FromDataItemModel.cs" />
+    <Compile Include="ADCoreSystem\ADCoreSys\Model\HttpUpload.cs" />
+    <Compile Include="ADCoreSystem\ADCoreSys\ImportStuentFormSys\ImportStuentFormSys.cs" />
+    <Compile Include="ADCoreSystem\ADCoreSys\Main\Mainsys.cs" />
+    <Compile Include="ADCoreSystem\ADCoreSys\Model\FuseImg.cs" />
+    <Compile Include="ADCoreSystem\ADCoreSys\Model\ImageData\BitmapDataBitmap.cs" />
+    <Compile Include="ADCoreSystem\ADCoreSys\Model\ImageData\imgMsS.cs" />
+    <Compile Include="ADCoreSystem\ADCoreSys\ModifyStudentgradeSys\ModifyStudentgradeSys.cs" />
+    <Compile Include="ADCoreSystem\ADCoreSys\OutPutStudentWindowSys\OutPutStudentWindowSys.cs" />
+    <Compile Include="ADCoreSystem\ADCoreSys\ProjectSettingSys\ProjectSettingWindowSys.cs" />
+    <Compile Include="ADCoreSystem\ADCoreSys\StartTesting\StartTestingSys.cs" />
+    <Compile Include="ADCoreSystem\CommandData\CommandData.cs" />
+    <Compile Include="ADCoreSystem\TreeView\TreeView.cs" />
+    <Compile Include="ADCoreSystem\GradeManager\GradeManager.cs" />
+    <Compile Include="ADCoreSystem\LoggerHelper\LoggerHelper.cs" />
+    <Compile Include="ADCoreSystem\MyUtils\MyUntils.cs" />
+    <Compile Include="ADCoreSystem\TxtFile\TxtFile.cs" />
+    <Compile Include="ADCoreWindow\CreateProjectWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADCoreWindow\CreateProjectWindow.Designer.cs">
+      <DependentUpon>CreateProjectWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ADCoreWindow\DetermineGrades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADCoreWindow\DetermineGrades.Designer.cs">
+      <DependentUpon>DetermineGrades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ADCoreWindow\EquipmentCodeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADCoreWindow\EquipmentCodeForm.Designer.cs">
+      <DependentUpon>EquipmentCodeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ADCoreWindow\ExportGradeIntoWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADCoreWindow\ExportGradeIntoWindow.Designer.cs">
+      <DependentUpon>ExportGradeIntoWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ADCoreWindow\FindImage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADCoreWindow\FindImage.Designer.cs">
+      <DependentUpon>FindImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ADCoreWindow\FrmCameraProperty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADCoreWindow\FrmCameraProperty.Designer.cs">
+      <DependentUpon>FrmCameraProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ADCoreWindow\ImportStuentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADCoreWindow\ImportStuentForm.Designer.cs">
+      <DependentUpon>ImportStuentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ADCoreWindow\MainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADCoreWindow\MainWindow.Designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ADCoreWindow\ModifyStudentgradeWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADCoreWindow\ModifyStudentgradeWindow.Designer.cs">
+      <DependentUpon>ModifyStudentgradeWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ADCoreWindow\OutPutStudentWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADCoreWindow\OutPutStudentWindow.Designer.cs">
+      <DependentUpon>OutPutStudentWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ADCoreWindow\PointForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADCoreWindow\PointForm1.Designer.cs">
+      <DependentUpon>PointForm1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ADCoreWindow\ProjectSettingWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADCoreWindow\ProjectSettingWindow.Designer.cs">
+      <DependentUpon>ProjectSettingWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ADCoreWindow\SelectPunctuationRule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADCoreWindow\SelectPunctuationRule.Designer.cs">
+      <DependentUpon>SelectPunctuationRule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ADCoreWindow\StartTestingWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADCoreWindow\StartTestingWindow.Designer.cs">
+      <DependentUpon>StartTestingWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GameStart.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ADCoreWindow\CreateProjectWindow.resx">
+      <DependentUpon>CreateProjectWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADCoreWindow\DetermineGrades.resx">
+      <DependentUpon>DetermineGrades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADCoreWindow\EquipmentCodeForm.resx">
+      <DependentUpon>EquipmentCodeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADCoreWindow\ExportGradeIntoWindow.resx">
+      <DependentUpon>ExportGradeIntoWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADCoreWindow\FindImage.resx">
+      <DependentUpon>FindImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADCoreWindow\FrmCameraProperty.resx">
+      <DependentUpon>FrmCameraProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADCoreWindow\ImportStuentForm.resx">
+      <DependentUpon>ImportStuentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADCoreWindow\MainWindow.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADCoreWindow\ModifyStudentgradeWindow.resx">
+      <DependentUpon>ModifyStudentgradeWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADCoreWindow\OutPutStudentWindow.resx">
+      <DependentUpon>OutPutStudentWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADCoreWindow\PointForm1.resx">
+      <DependentUpon>PointForm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADCoreWindow\ProjectSettingWindow.resx">
+      <DependentUpon>ProjectSettingWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADCoreWindow\SelectPunctuationRule.resx">
+      <DependentUpon>SelectPunctuationRule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADCoreWindow\StartTestingWindow.resx">
+      <DependentUpon>StartTestingWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\坐位体前屈\CustomControl\CustomControl.csproj">
+      <Project>{3022476e-cef0-48d4-b76d-5aa42f4dd121}</Project>
+      <Name>CustomControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ADCoreDataCommon\ADCoreDataCommon.csproj">
+      <Project>{4979269e-d841-4cec-a0ba-5b9f973f5026}</Project>
+      <Name>ADCoreDataCommon</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\OpenCvSharp4.runtime.win.4.6.0.20220608\build\net48\OpenCvSharp4.runtime.win.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\OpenCvSharp4.runtime.win.4.6.0.20220608\build\net48\OpenCvSharp4.runtime.win.props'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <Import Project="..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" />
+</Project>
